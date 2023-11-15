@@ -1,7 +1,10 @@
 let td1 = document.querySelectorAll('.section1 td');
 let td2 = document.querySelectorAll('.section2 td');
  let input = document.querySelectorAll('input');
-       let value1;
+
+
+
+       let value1='RUB';
 
        let a='RUB';
        let b='USD';
@@ -12,24 +15,25 @@ let td2 = document.querySelectorAll('.section2 td');
   fetch(apiUrl)
   .then((res)=>res.json())
   .then((data)=>{
-      console.log(data);
-      console.log(data.value);
+    //   console.log(data);
+    //   console.log(data.value);
          let p1 = document.querySelector(".p1");
      
          p1.innerHTML=`1 ${a} = ${data.value} ${b}`;
   })
+
    let amount2= 1;
    const apiUrl2= `${apiUrl1}?api_key=${apiKey}&from=${b}&to=${a}&amount=${amount2}`;
    fetch(apiUrl2)
    .then((res)=>res.json())
    .then((data)=>{
-       console.log(data);
-   console.log(data.value);
+    //    console.log(data);
+//    console.log(data.value);
    let p = document.querySelector(".p2");
     
           p.innerHTML=`1 ${b} = ${data.value} ${a}`;
      })
-    
+        
 
     
  td1.forEach((a,index )=>{
@@ -50,7 +54,7 @@ let td2 = document.querySelectorAll('.section2 td');
 })
 
 
-let value2;
+let value2='USD';
 td2.forEach((a,index )=>{
     a.addEventListener('click',()=>{
       value2 = td2[index].innerText;
@@ -79,15 +83,15 @@ td1.forEach(x =>{
          fetch(apiUrl)
          .then((res)=>res.json())
          .then((data)=>{
-            console.log(data);
+            // console.log(data);
              input[1].value = data.value.toFixed(4)   
                    })
     })
 })
 td2.forEach(x =>{
     x.addEventListener('click',()=>{
-        let a=value1 ;
-        let b=value2;
+        let a=value2 ;
+        let b=value1;
          let amount= input[1].value;
          const apiKey = "Dae5peUZvHbtRwXlbsxu9gB3seNl9ogT";
          const apiUrl1 = "https://api.currencybeacon.com/v1/convert";
@@ -106,6 +110,7 @@ input[0].addEventListener('keyup',()=>{
     let a=value1 ;
     let b=value2;
      let amount= input[0].value;
+     console.log(amount);
      const apiKey = "Dae5peUZvHbtRwXlbsxu9gB3seNl9ogT";
      const apiUrl1 = "https://api.currencybeacon.com/v1/convert";
      const apiUrl= `${apiUrl1}?api_key=${apiKey}&from=${a}&to=${b}&amount=${amount}`;
@@ -116,7 +121,12 @@ input[0].addEventListener('keyup',()=>{
          input[1].value = data.value.toFixed(4)   
                })
 })
-    // input[1].value= input.value.replace(/[^0-9.]/g,'');
+
+     input[1].addEventListener('keyup',()=>{
+       input[1].value= input[1].value.replace(/[^0-9.]/g,'');
+
+     })
+     
     
   function myprg0(){
     let a=value2 ;
@@ -128,7 +138,7 @@ input[0].addEventListener('keyup',()=>{
      fetch(apiUrl)
      .then((res)=>res.json())
      .then((data)=>{
-        console.log(data.value)
+      
      let p = document.querySelector(".p2");
     
     p.innerHTML=`1 ${a} = ${data.value} ${b}`;
@@ -142,8 +152,6 @@ input[0].addEventListener('keyup',()=>{
      fetch(apiUrll)
      .then((res)=>res.json())
      .then((data)=>{
-        console.log(data);
-
            let p1 = document.querySelector(".p1");
            
            p1.innerHTML=`1 ${c} = ${data.value} ${d}`;
@@ -152,6 +160,8 @@ input[0].addEventListener('keyup',()=>{
    
   }
   input[1].addEventListener('keyup', ()=>{
+    console.log(value1)
+    console.log(value2);
     let a=value2 ;
    let b=value1;
     let amount= input[1].value;
@@ -185,8 +195,6 @@ function myprg1(){
        let c=value1 ;
     let d=value2;
      let amountt= 1;
-     console.log(a)
-           console.log(b)
      const apiKeyy = "Dae5peUZvHbtRwXlbsxu9gB3seNl9ogT";
      const apiUrl11 = "https://api.currencybeacon.com/v1/convert";
      const apiUrll= `${apiUrl11}?api_key=${apiKeyy}&from=${c}&to=${d}&amount=${amountt}`;
@@ -207,7 +215,7 @@ td1.forEach(item =>{
 td2.forEach(item =>{
     item.addEventListener('click', myprg1)
 })
-
+ 
     // input.value= input.value.replace(/[^0-9.]/g,'');
     
 
