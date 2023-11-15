@@ -1,0 +1,70 @@
+.div1{
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+}
+div p{
+    padding: 10px 15px ;
+}
+.pfirst{
+    color: black;
+}
+p{
+    color: grey;
+}
+header{
+    display: flex;
+    background-color: rgb(249, 245, 245);
+    
+}
+.boyti{
+    margin-right: 40px;
+    border-radius: 10px;
+    padding: 10px 34px;
+    height: 45px;
+    margin-top: 12px;
+    background-color: rgb(253, 253, 253);
+    border: #fff;
+}
+h1{
+    text-align: center;
+}
+main{
+    display: flex;
+    justify-content: space-evenly;
+}
+tr{
+ 
+    color: grey;
+    border-radius: 10px;
+    border:1px solid  rgb(183, 182, 182);
+} 
+td{ 
+    padding: 10px;
+    font-size: 25px;
+}
+table{
+    border-collapse: collapse;
+}
+.text1, .text2{
+    margin-top: 25px;
+    width: 321px;
+    height: 120px;
+    border: 2px solid grey;
+    font-size: 25px;
+}
+.input1, .input2{
+    margin: -2px;
+    width: 321px;
+    height: 120px;
+    border: 2px solid grey;
+    font-size: 25px;
+}
+.violet{
+    background-color: blueviolet;
+}
+.p1 ,.p2{
+    z-index: 1;
+    font-size: 14px;
+    margin-top: -30px;
+}
